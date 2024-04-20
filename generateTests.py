@@ -8,8 +8,8 @@ def generate_acyclic_graph_file(filename, numberV, numberE):
 
         def dfs(vertex):
             visitedV.add(vertex)
-            for neighbor in [v for u, v in listE if u == vertex]:
-                if neighbor == v2 or (neighbor not in visitedV and dfs(neighbor)):
+            for adjacentV in [v for u, v in listE if u == vertex]:
+                if adjacentV == v2 or (adjacentV not in visitedV and dfs(adjacentV)):
                     return True
             return False
 
